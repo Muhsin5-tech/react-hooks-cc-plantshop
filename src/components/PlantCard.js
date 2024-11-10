@@ -36,6 +36,7 @@ function PlantCard({ plant, onToggleSoldOut, onUpdatePrice }) {
       >
         {plant.soldOut ? "Out of Stock" : "In Stock"}
       </button>
+      <button onClick={() => onDelete(plant.id)}>Remove</button>
     </li>
   );
 }
