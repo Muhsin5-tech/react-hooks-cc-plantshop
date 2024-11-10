@@ -54,6 +54,20 @@ function handleUpdatePrice(id, newPrice) {
   .catch((error) => console.error("Error updating price:", error))
 }
 
+
+function handleDeletePlant(id) {
+  fetch(`http://localhost:6001/plants/${id}`, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      if (response.ok) {
+        setPlants((prevPlants) => prevPlants.filter((plant) => plant.id !== id));
+      }
+    })
+    .catch((error) => console.error("Error deleting plant:", error));
+}
+
+
   const filteredPlants = plants.filter((plant) => 
     plant.name.toLowerCase().includes(SearchTerm.toLowerCase())
   )
@@ -66,6 +80,7 @@ function handleUpdatePrice(id, newPrice) {
       plants={filteredPlants} 
       onToggleSoldOut={handleToggleSoldOut} 
       onUpdatePrice={handleUpdatePrice}
+      onDelete={handleDeletePlant}
       />
     </main>
   );

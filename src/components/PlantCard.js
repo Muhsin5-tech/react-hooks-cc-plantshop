@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function PlantCard({ plant, onToggleSoldOut, onUpdatePrice }) {
+function PlantCard({ plant, onToggleSoldOut, onUpdatePrice, onDelete }) {
   const [price, setPrice] = useState(plant.price)
   const [isEditing, setIsEditing] = useState(false)
 
