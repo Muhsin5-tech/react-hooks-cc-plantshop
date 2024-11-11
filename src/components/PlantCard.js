@@ -26,17 +26,19 @@ function PlantCard({ plant, onToggleSoldOut, onUpdatePrice, onDelete }) {
             <button type="submit">Save</button>
         </form>
       ) : (
+        <div>
         <p>
-          Price: ${price}{""}
-          <button onClick={() => setIsEditing(true)}>Edit Price</button>
+          Price: {price}{""}  
         </p>
+        <button className="btn-edit" onClick={() => setIsEditing(true)}>Edit Price</button>
+        </div>
       )}
       <button className={plant.soldOut ? "" : "primary"}
         onClick={() => onToggleSoldOut(plant.id, !plant.soldOut)}
       >
         {plant.soldOut ? "Out of Stock" : "In Stock"}
       </button>
-      <button onClick={() => onDelete(plant.id)}>Remove</button>
+      <button className="btn-delete" onClick={() => onDelete(plant.id)}>Remove</button>
     </li>
   );
 }

@@ -24,8 +24,18 @@ button {
 }
 
 button.primary {
-  background-color: var(--green);
+  background-color: green;
   color: white;
+}
+
+.btn-edit{
+  margin-left: 20px;
+  background-color: chartreuse;
+}
+
+.btn-delete{
+  margin-left: 20px;
+  background-color: red;
 }
 
 .app {
